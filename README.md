@@ -1,8 +1,13 @@
 Exit-Pop
 ========
 
-### Usage
+### Demos
+##### Simple HTML Demo: [Click Here](http://jumbleberry.github.io/Exit-Pop/)
 
+##### Landing Page Demo: [Click Here](http://jumbleberry.github.io/Exit-Pop/demo/index.html)
+
+
+### Usage
 ```
 $.exitpop({
 	predict_amt: 0.02,
@@ -17,7 +22,6 @@ $.exitpop({
 ```
 
 ###Configuration Options
-====
 
 #### predict_amt
 `default: 0.02`
