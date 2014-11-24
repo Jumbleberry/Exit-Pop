@@ -1,7 +1,7 @@
 <html>
     <head>
-        <script type="text/javascript" src="jquery.js"></script>
-        <script type="text/javascript" src="exitpop.min.js"></script>
+        <script type="text/javascript" src="./jquery.js"></script>
+        <script type="text/javascript" src="./exitpop.min.js"></script>
         <style type="text/css">
             html, body{ min-height: 100%; margin: 0; padding: 0; height: 3000px; }
             body{ position: relative; }
@@ -24,7 +24,7 @@
         <script type="text/javascript">
         $(document).ready(function() {
             
-            $.exitpop({ cta: "#div1, #div2, #div3, #div4", callback: function() { $('#exit').show(); } });
+            $.exitpop({ cta: "#div1, #div2, #div3, #div4", callback: function() { $('#exit').show(); }, popCount: 999 });
             
             // Just for demo
             $(document).on('keyup', function(e) {
