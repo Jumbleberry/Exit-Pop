@@ -1,0 +1,345 @@
+#outer-wrapper{
+    background: url(../img/bg.jpg) top center no-repeat ;
+    margin: 0 auto;
+    width: 100%;
+    overflow: hidden;
+    
+}
+#warning{
+    position: relative;
+    top: 0px;
+    height: 65px;
+    width: 1200px;
+    background: #ed1f24;
+    font-family: 'Open Sans', sans-serif;
+    margin: 0 auto;
+    width: 100%;
+    top: -75px;
+}
+#warning p{
+    text-align: center;
+    width: 834px;
+    margin: 0 auto;
+    font-size: 13px;
+    line-height: 17px;
+    position: relative;
+    top: 15px;
+    color: white;
+}
+#warning span{
+    font-weight: bold;
+    color: #f6ff00;
+}
+#wrapper{
+    width: 1000px;
+    margin: 0 auto;
+    font-family: 'Open Sans', sans-serif;
+}
+.after:after{
+    content: '';
+    display: block;
+    clear: both;
+}
+h1,h2{
+    text-indent: -9999px;
+}
+#form{
+    float: right;
+    width: 312px;
+    border: 3px solid #f9c600;
+    box-shadow: 0px 0px 0px 1px #b2b2b2;
+        -webkit-box-shadow: 0px 0px 0px 1px #b2b2b2;
+            -moz-box-shadow: 0px 0px 0px 1px #b2b2b2;
+                -ms-box-shadow: 0px 0px 0px 1px #b2b2b2;
+    position: absolute;            
+    right: -10px;
+    top: 70px;
+    font-family: helvetica;
+}
+#form a{
+    color: #66cc33;
+}
+#form-top{
+    background: url(../img/form-top.jpg);
+    width: auto;
+    height: 91px;  
+}
+#form-inner{
+    width: auto;
+    background: #f8f8f8;
+}
+#form-btm{
+    background: url(../img/form-btm.jpg);
+    width: auto;
+    height: 196px;
+}
+#form form div{
+    position: relative;
+    display: block;
+    overflow: hidden;
+    height: 24px;
+    margin-bottom: 12px;
+}
+form{
+    text-align: right;
+    font-size: 12px;
+    padding: 15px 20.5px;
+}
+input[type="text"]{
+    height: 18px;
+    width: 180px;
+    text-indent: 10px;
+}
+input[type="submit"]{
+    background: url(../img/form-btn.png) no-repeat;
+    width: 268px;
+    height: 70px;
+    text-indent: 99999px;
+    cursor: pointer;
+    border: none;
+    margin-top: 30px;
+    margin-left: 20px;
+    position: relative;
+    background-position: 0 0;
+}
+input[type="submit"]:hover{
+    background-position: 0 -73px;
+}
+::-webkit-input-placeholder {
+    font-style: italic; 
+    font-size: 11px;
+    font-family: helvetica;
+}
+:-moz-placeholder{
+    font-style: italic; 
+    font-size: 11px;
+    font-family: helvetica;
+}
+:-ms-input-placeholder{
+    font-style: italic; 
+    font-size: 11px;
+    font-family: helvetica;
+}
+#top{
+    height: 745px;
+    position: relative;
+}
+#section-1{
+    position: relative;
+}
+#sec-1-content{
+    width: 547px;
+    font-size: 13px;
+    line-height: 18px;
+    margin-left: 30px;
+    position: relative;
+    top: 10px;
+}
+#sec-1-content h1{
+    background: url(../img/sec-1-header.png) no-repeat;
+    width: 488px;
+    height: 62px;
+}
+#sec-1-content h2{
+    background: url(../img/sec-1-sub-header.png) no-repeat;
+    width: 420px;
+    height: 27px;
+}
+#sec-1-content h1, #sec-1-content h2{
+    margin-bottom: 10px;
+}
+#sec-1-content p{
+    margin-bottom: 20px;
+}
+#sub-content{
+    position: absolute;
+    right: -65px;
+    bottom: -139px;
+    z-index: 4;
+}
+#section-2{
+    background: url(../img/sec-2-bg.jpg) no-repeat white;
+    width: 100%;
+    height: 465px;
+    position: relative;
+    top: 99px;
+    box-shadow: 1px 1px 25px 5px #b2b2b2;
+        -webkit-box-shadow: 1px 1px 25px 5px #b2b2b2;
+            -moz-box-shadow: 1px 1px 25px 5px #b2b2b2;
+                -ms-box-shadow: 1px 1px 25px 5px #b2b2b2;
+}
+#sec-2-content{
+    font-size: 13px;
+    line-height: 19px;
+    width: 376px;
+    margin-left: 35px;
+    padding-top: 40px;
+}
+#sec-2-content h1{
+    background: url(../img/sec-2-header.png) no-repeat;
+    width: 345px;
+    height: 26px;
+    margin-bottom: 20px;
+}
+#vessels{
+    position: absolute;
+    bottom: 0px;
+    left: -161px;
+}
+#vessels-2{
+    position: absolute;
+    bottom: -49px;
+    left: -9px;
+    z-index: 2;
+}
+#pics{
+    position: absolute;
+    right: -105px;
+    top: -22px;
+}
+#section-3{
+    margin-top: 155px;
+    position: relative;
+}
+#sec-3-content{
+    width: 435px;
+    font-size: 13px;
+    line-height: 18px;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+}
+#sec-3-sub-content{
+    position: relative;
+    right: 100px
+}
+#sec-3-content h2{
+    position:  relative;
+    left: -10px;
+}
+#flexing{
+    position: relative;
+    left: -10px;
+    top: 25px;
+}
+#sec-3-content p{
+    margin: 8px 0 25px 0;
+}
+#sec-3-content h2{
+    background: url(../img/logo.png) no-repeat;
+    width: 326px;
+    height: 75px;
+}
+#section-4{
+    height: 800px;
+}
+#section-4 p{
+    position: relative;
+    top: 615px;
+    font-style: italic;
+    font-size: 12px;
+    line-height: 18px;
+    text-align: center;
+    width: 795px;
+    margin: 0 auto;
+}
+footer{
+    font-family: arial;
+    width: 225px;
+    margin: 0 auto;
+    position: relative;
+    top: -65px;
+    color: black;
+    padding-bottom: 40px;
+}
+footer p{
+    clear: both;
+}
+footer ul li{
+    float: left;
+    padding-left: 2px
+}
+#popover{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    display: none;
+    z-index: 100;
+}
+#overlay{
+    position: fixed;
+    background: #000;
+    opacity: .5;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+#pop-box{
+    width: 700px;
+    height: 450px;
+    background: url(../img/downsell.jpg);
+    margin: 100px auto;
+    font-size: 24px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+#down-btn{
+    background: url(../img/down-btn.png) no-repeat;
+    width: 286px;
+    height: 67px;
+    display: block;
+    left: 225px;
+    position: absolute;
+    bottom: 25px;
+    background-position: 0 0px;
+}
+#down-btn:hover{
+    background-position: 0 -71.5px;
+}
+#btn{
+  width: 49px;
+  height: 49px;
+  border-radius: 50%;
+  cursor: pointer;
+  position: fixed;
+  bottom: 70px;
+  right: 50px;
+  display: none;
+  overflow: hidden;
+}
+#btn img{
+  display: block;
+margin: 0 auto;     
+  position: relative;
+  top: 15px;
+  right: 1px;
+  z-index: 3;
+  font-weight: lighter;
+}
+#btn-overlay{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: black;
+  opacity: .25; 
+  top: 0px;
+}
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) {
+    #outer-wrapper{
+/*        background: url(../img/bg-ios.jpg) top center no-repeat;*/
+        background-size: 155%;
+        margin:0 auto;
+        width: 100%;
+        min-width: 1300px;
+        overflow: hidden; 
+    }
+    #warning{
+        min-width: 1300px;
+    }
+}

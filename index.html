@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <script type="text/javascript" src="jquery.js"></script>
+        <script type="text/javascript" src="exitpop.min.js"></script>
+        <style type="text/css">
+            html, body{ min-height: 100%; margin: 0; padding: 0; height: 3000px; }
+            body{ position: relative; }
+            div { width: 200px; height: 60px; background-color: #ff0000; position: relative; }
+            #div1 { margin: auto auto; height: 20px; }
+            #div2 { margin: auto auto; left: -500px; height: 20px; }
+            #div3 { margin: auto auto; left: 440px; width: 60px; height: 60px; }
+            #div4 { margin: auto auto; left: 270px; top: 350px; width: 400px; height: 80px; }
+            #exit {position:absolute;top:0;left:0;width:100%;height:100%;z-index:10;background-color:rgba(0,0,0,0.5); display: none; }
+            #inner { margin: auto auto; width: 600px; height: 200px; background-color: #000; color: #fff; top: 200px; text-align: center; padding-top: 200px;  }
+        </style>
+    </head>
+    <body>
+        <div id="div1"></div>
+        <div id="div2"></div>
+        <div id="div3"></div>
+        <div id="div4"></div>
+        <div id="exit"><div id="inner">Leaving Page</div></div>
+        
+        <script type="text/javascript">
+        $(document).ready(function() {
+            
+            $.exitpop({ cta: "#div1, #div2, #div3, #div4", callback: function() { $('#exit').show(); } });
+            
+            // Just for demo
+            $(document).on('keyup', function(e) {
+                if (e.keyCode == 27)
+                    $('#exit').hide();
+            });
+        });
+        </script>
+    </body>
+</html>
