@@ -4,6 +4,7 @@
     var opts = {
             predict_amt: 0.02,
             fps: 300,
+            delay: 500,
             tolerance: {x: 10, y: 10},
             cta: "",
             callback: function() {},
@@ -57,23 +58,41 @@
             [0, 0, 0, 0],
             [0, 0, 0, 0]
         ]),
-        // Start tracking user interaction
-        start = function() {
-            if (!animationHandle && opts.popCount)
-                animationHandle = setInterval(interpolate, 1000/opts.fps);
-        },
-        // Stop tracking user interaction
-        stop = function() {
-            if (animationHandle) {
-                clearInterval(animationHandle);
-                animationHandle = false;
-                
-                if (opts.popCount)
-                    interpolate();
+        throttle = function throttle(fn, threshhold, scope, dontFireFirst) {
+          threshhold || (threshhold = 250);
+          var last,
+              deferTimer;
+          return function () {
+            var context = scope || this;
+        
+            var now = +new Date,
+                args = arguments;
+            
+            if (dontFireFirst && !last)
+                last = now;
+            
+            if (deferTimer)
+                return;
+            
+            if (last) {
+              // hold on to it
+              clearTimeout(deferTimer);
+              deferTimer = setTimeout(function () {
+                last        = now;
+                deferTimer  = null;
+                fn.apply(context, args);
+              }, threshhold);
+            } else {
+              last = now;
+              fn.apply(context, args);
             }
+          };
         },
         // Trigger the user defined callback function
         callback = function() {
+            if (onPage)
+                return;
+            
             if (opts.popCount)
                 opts.popCount--;
             
@@ -183,19 +202,25 @@
                 return;
             
             // Cursor left the page, the mouse is moving upwards, and quick enough to exit the page from the top
-            if (!onPage && (end.y - start.y) < 0 && (yPos - ((start.y - end.y) * 2)) < 0)
-                callback();
+            if ((end.y - start.y) < 0 && (yPos - ((start.y - end.y) * 2)) < 0) {
+                opts.callbackThrottle();
             
             // User is intending to leave the page - this fixes a chrome bug where mouseleave isnt fired when mouse moves slowly
             // Cursor has to be moving upwards off of the page, and had to have already hovered over the page
-            if (end.y > 0 && end.y < 5 && end.y < start.y)
-                callback();
+            } else if (onPage === true && end.y > 0 && end.y < 5 && end.y < start.y) {
+                onPage = false;
+                opts.callbackThrottle();
+                
+            } else if (onPage === false && end.y >= 5) {
+                onPage = true;
+            }
         };
     
     $.exitpop = function (options) {
         
-        bounds  = [];
-        opts    = $.extend(opts, options || {});
+        bounds                  = [];
+        opts                    = $.extend(opts, options || {});
+        opts.callbackThrottle   = throttle(callback, opts.delay, null, true);
         
         // Get coords of all calls to actions
         $.each($(opts.cta), function(i, v) {
@@ -208,6 +233,12 @@
             
             // Track mouse coordinates
             $(document).mousemove(function(event) {
+                if (opts.popCount <= 0)
+                    return;
+                
+                if (onPage == undefined)
+                    onPage = true;
+                
                 lastX   = xPos;
                 lastY   = yPos;
                 
@@ -216,18 +247,18 @@
                 
                 xPos    = (event.pageX || 1000) - offsetX;
                 yPos    = (event.pageY || 1000) - offsetY;
+                
+                throttle(interpolate, 1000/opts.fps)();
             }).mousemove();
             
             // Track whether or not the cursor is on the page
             $(document).mouseleave(function(event) {
                 onPage = false;
-                stop();
+                
             }).mouseenter(function(event) {
                 onPage = true;
-                start();
+                
             });
-            
-            start();
         }
         
         return this;
